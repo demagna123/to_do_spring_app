@@ -2,7 +2,6 @@ package todo.todo_app.models;
 
 import jakarta.persistence.*;
 import lombok.*;
-import org.springframework.data.annotation.Id;
 import todo.todo_app.enums.StatusEnum;
 
 @Entity
