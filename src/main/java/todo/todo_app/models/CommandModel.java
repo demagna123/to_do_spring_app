@@ -23,5 +23,7 @@ public class CommandModel {
     @JoinColumn(name = "product_id")
     private ProductModel product;
 
+    private Integer quantity;
+    private Integer totalPrice;
 
 }

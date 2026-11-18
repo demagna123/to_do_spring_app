@@ -28,7 +28,12 @@ public class SecurityConfig {
                                 "/auth/**",
                                 "/v3/api-docs/**",
                                 "/swagger-ui/**",
-                                "/swagger-ui.html"
+                                "/swagger-ui.html",
+                                "/error",
+                                "/clients/**",
+                                "/products/**",
+                                "/categories/**",
+                                "/commands/**"
                         ).permitAll() // Routes publiques
                         .anyRequest().authenticated() // Toutes les autres routes nécessitent un token JWT
                 )

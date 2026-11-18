@@ -16,7 +16,6 @@ public class ClientServiceImplementation {
         this.clientRepository = clientRepository;
     }
 
-
     public List<ClientModel> getAllClient(){
         return clientRepository.findAll();
     }
@@ -24,7 +23,6 @@ public class ClientServiceImplementation {
     public ClientModel createClient (ClientModel clientModel){
         return  clientRepository.save(clientModel);
     }
-
 
     public ClientModel updateClientById(Long id, ClientModel clientModel){
         ClientModel client = clientRepository.findById(id).orElseThrow(() -> new RuntimeException("Client non trouvé"));

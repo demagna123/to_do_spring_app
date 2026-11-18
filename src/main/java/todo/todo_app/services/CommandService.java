@@ -1,15 +1,17 @@
 package todo.todo_app.services;
 
 
+import todo.todo_app.dtos.command.CommandRequestDto;
+import todo.todo_app.dtos.command.CommandResponseDto;
 import todo.todo_app.models.CommandModel;
 
 import java.util.List;
 
 public interface CommandService {
 
-    List<CommandModel> getAllCommand();
-    CommandModel createCommand(CommandModel commandModel);
-    CommandModel updateCommandById(Long id, CommandModel commandModel);
+    List<CommandResponseDto> getAllCommand();
+    CommandResponseDto getCommandById(Long id);
+    CommandResponseDto createCommand(CommandRequestDto request);
     void deleteCommandById(Long id);
 
 }

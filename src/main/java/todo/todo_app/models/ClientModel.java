@@ -21,7 +21,7 @@ public class ClientModel {
 
     private String firstName;
     private String lastName;
-    private String Town;
+    private String town;
 
     @Enumerated(EnumType.STRING)
     private GenderEnum gender;
