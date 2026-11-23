@@ -8,11 +8,11 @@ import todo.todo_app.repositories.CategoryRepository;
 import java.util.List;
 @Transactional
 @Service
-public class CategoryServiceImplementation {
+public class CategoryService implements todo.todo_app.services.CategoryService {
 
     private final CategoryRepository categoryRepository;
 
-    public CategoryServiceImplementation (CategoryRepository categoryRepository){
+    public CategoryService(CategoryRepository categoryRepository){
         this.categoryRepository = categoryRepository;
     }
 

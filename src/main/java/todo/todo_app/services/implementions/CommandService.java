@@ -17,13 +17,13 @@ import java.util.List;
 
 @Transactional
 @Service
-public class CommandServiceImplementation {
+public class CommandService implements todo.todo_app.services.CommandService {
 
     private final CommandRepository commandRepository;
     private final ClientRepository clientRepository;
     private final ProductRepository productRepository;
 
-    public CommandServiceImplementation(CommandRepository commandRepository,ClientRepository clientRepository,ProductRepository productRepository ){
+    public CommandService(CommandRepository commandRepository, ClientRepository clientRepository, ProductRepository productRepository ){
         this.commandRepository  = commandRepository;
         this.clientRepository=clientRepository;
         this.productRepository =productRepository;

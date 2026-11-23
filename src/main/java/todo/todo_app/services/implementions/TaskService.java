@@ -6,14 +6,13 @@ import todo.todo_app.models.TaskModel;
 import todo.todo_app.repositories.TaskRepository;
 
 import java.util.List;
-import java.util.Optional;
 
 @Transactional
 @Service
 
-public class TaskServiceImplementation {
+public class TaskService implements todo.todo_app.services.TaskService {
     private final TaskRepository taskRepository;
-    public TaskServiceImplementation(TaskRepository taskRepository){
+    public TaskService(TaskRepository taskRepository){
         this.taskRepository = taskRepository;
     }
 

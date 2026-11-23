@@ -2,7 +2,7 @@ package todo.todo_app.controllers;
 
 import org.springframework.web.bind.annotation.*;
 import todo.todo_app.models.TaskModel;
-import todo.todo_app.services.implementions.TaskServiceImplementation;
+import todo.todo_app.services.implementions.TaskService;
 
 import java.util.List;
 
@@ -12,29 +12,29 @@ import java.util.List;
 public class TaskController {
 
 
-    private final TaskServiceImplementation taskServiceImplementation;
+    private final TaskService taskService;
 
-    public TaskController(TaskServiceImplementation taskServiceImplementation){
-        this.taskServiceImplementation = taskServiceImplementation;
+    public TaskController(TaskService taskService){
+        this.taskService = taskService;
     }
 
     @PostMapping("/create")
     public TaskModel createTask(@RequestBody TaskModel taskModel){
-        return taskServiceImplementation.createTask(taskModel);
+        return taskService.createTask(taskModel);
     }
 
     @GetMapping("/list")
     public List<TaskModel> getAllTask(){
-        return taskServiceImplementation.getAllTask();
+        return taskService.getAllTask();
     }
 
     @PutMapping("/update/{id}")
     public TaskModel updateTaskById(@PathVariable Long id, @RequestBody TaskModel taskModel){
-        return taskServiceImplementation.updateTaskById(id,taskModel);
+        return taskService.updateTaskById(id,taskModel);
     }
 
     @DeleteMapping("/delete/{id}")
     public void deleteTaskById(@PathVariable Long id){
-        taskServiceImplementation.deleteTaskById(id);
+        taskService.deleteTaskById(id);
     }
 }

@@ -8,11 +8,11 @@ import todo.todo_app.repositories.ClientRepository;
 import java.util.List;
 @Transactional
 @Service
-public class ClientServiceImplementation {
+public class ClientService implements todo.todo_app.services.ClientService {
 
     private final ClientRepository clientRepository;
 
-    public ClientServiceImplementation(ClientRepository clientRepository){
+    public ClientService(ClientRepository clientRepository){
         this.clientRepository = clientRepository;
     }
 

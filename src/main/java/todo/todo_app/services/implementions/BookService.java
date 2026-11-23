@@ -9,10 +9,10 @@ import java.util.List;
 
 @Transactional
 @Service
-public class BookServiceImplementation {
+public class BookService implements todo.todo_app.services.BookService {
     private final BookRepository bookRepository;
 
-    public BookServiceImplementation (BookRepository bookRepository){
+    public BookService(BookRepository bookRepository){
         this.bookRepository = bookRepository;
     }
 

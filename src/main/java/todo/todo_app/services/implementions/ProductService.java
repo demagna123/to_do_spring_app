@@ -9,11 +9,11 @@ import java.util.List;
 
 @Transactional
 @Service
-public class ProductServiceImplementation {
+public class ProductService implements todo.todo_app.services.ProductService {
 
     private final ProductRepository productRepository;
 
-    public ProductServiceImplementation (ProductRepository productRepository){
+    public ProductService(ProductRepository productRepository){
         this.productRepository = productRepository;
     }
 

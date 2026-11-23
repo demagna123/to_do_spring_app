@@ -5,8 +5,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import todo.todo_app.dtos.command.CommandRequestDto;
 import todo.todo_app.dtos.command.CommandResponseDto;
-import todo.todo_app.models.CommandModel;
-import todo.todo_app.services.implementions.CommandServiceImplementation;
+import todo.todo_app.services.implementions.CommandService;
 
 import java.util.List;
 
@@ -15,31 +14,31 @@ import java.util.List;
 @RequestMapping("commands")
 public class CommandController {
 
-    private  final CommandServiceImplementation commandServiceImplementation;
+    private  final CommandService commandService;
 
-    public CommandController (CommandServiceImplementation commandServiceImplementation){
-        this.commandServiceImplementation = commandServiceImplementation;
+    public CommandController (CommandService commandService){
+        this.commandService = commandService;
     }
 
     @GetMapping
     List<CommandResponseDto> getAllCommand(){
-        return  commandServiceImplementation.getAllCommand();
+        return  commandService.getAllCommand();
     }
 
     @GetMapping("/{id}")
     public CommandResponseDto getCommandById(@PathVariable Long id) {
-        return commandServiceImplementation.getCommandById(id);
+        return commandService.getCommandById(id);
     }
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public CommandResponseDto createCommand(@Valid @RequestBody CommandRequestDto request) {
-        return commandServiceImplementation.createCommand(request);
+        return commandService.createCommand(request);
     }
 
     @DeleteMapping("/{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteCommandById(@PathVariable Long id) {
-        commandServiceImplementation.deleteCommandById(id);
+        commandService.deleteCommandById(id);
     }
 }
